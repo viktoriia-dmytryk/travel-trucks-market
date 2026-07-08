@@ -1,0 +1,119 @@
+.listCampers {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  background: var(--inputs);
+
+  @media only screen and (min-width: 1440px) {
+    flex-direction: row;
+    width: 888px;
+  }
+}
+.coverImage {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 219 / 240;
+
+  @media only screen and (min-width: 1440px) {
+    width: 219px;
+    height: 240px;
+  }
+}
+.name {
+  display: flex;
+  justify-content: space-between;
+}
+.name,
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--main);
+}
+.infoWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 524px;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: flex-start;
+}
+.titleInfoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.infoBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.map {
+  width: 16px;
+  height: 16px;
+}
+.location {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 4px;
+  color: var(--main);
+}
+.attention {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+}
+.tagBox {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 12px 18px;
+  background: var(--badges);
+  mix-blend-mode: multiply;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--main);
+}
+.tagIcon {
+  width: 20px;
+  height: 20px;
+}
+.button {
+  border-radius: 200px;
+  padding: 16px 60px;
+  background: var(--grey-green);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  align-self: flex-start;
+  transition: background 300ms cubic-bezier(0.31, 0.63, 0.78, 0.91);
+}
+.button:hover,
+.button:focus-visible {
+  background: var(--green-hover);
+}
