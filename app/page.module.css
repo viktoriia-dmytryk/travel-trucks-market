@@ -1,0 +1,18 @@
+.page {
+  width: 100vi;
+  height: 100vh;
+  max-height: 768px;
+  background-image: image-set(
+    url('/images/hero-image@1x.webp') 1x,
+    url('/images/hero-image@2x.webp') 2x,
+    url('/images/hero-image@1x.jpeg') 1x,
+    url('/images/hero-image@2x.jpeg') 2x
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media only screen and (min-width: 1440px) {
+    width: 1440px;
+  }
+}
