@@ -1,15 +1,17 @@
 .mainBox {
-  width: 100%;
+  padding: 136px 0 52px;
+
+  @media only screen and (min-width: 1440px) {
+    padding: 136px 64px 52px;
+  }
+}
+.wrapper {
   display: flex;
   flex-direction: column;
-  gap: 65px;
-  padding-top: 120px;
-  padding-bottom: 52px;
-
+  gap: 24px;
   @media only screen and (min-width: 1440px) {
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 120px 64px 52px;
   }
 }

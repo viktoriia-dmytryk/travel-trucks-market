@@ -1,4 +1,4 @@
-# 🚐 TravelTrucks
+# 🚐 TravelTrucksMarket
 
 A catalog of rental campers and motorhomes with filtering by location, camper
 form, engine type, and transmission.
@@ -25,3 +25,7 @@ form, engine type, and transmission.
 npm install
 npm run dev
 ```
+
+## Author
+
+🐙 **GitHub:** [viktoriia-dmytryk](https://github.com/viktoriia-dmytryk)

@@ -1,0 +1,164 @@
+.sidebar {
+  min-width: 100%;
+  background: var(--inputs);
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 360px;
+
+  @media only screen and (min-width: 1440px) {
+    min-width: 0;
+  }
+}
+
+.locationBlock {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.label {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+.iconMap {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.input {
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 18px 20px 18px 48px;
+  background: var(--white);
+  border: none;
+}
+
+.filtersTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  margin-bottom: 24px;
+}
+.fieldsetWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  outline: none;
+  border: none;
+}
+
+.legend {
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+
+.searchBtn {
+  width: 100%;
+  margin-top: 48px;
+  border-radius: 200px;
+  padding: 16px 60px;
+  background: var(--grey-green);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: background 300ms cubic-bezier(0.31, 0.63, 0.78, 0.91);
+}
+
+.searchBtn:hover,
+.searchBtn:focus-visible {
+  background: var(--green-hover);
+}
+
+.clearBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  padding: 16px 32px;
+  width: 100%;
+  background: var(--white);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  transition: border 300ms cubic-bezier(0.31, 0.63, 0.78, 0.91);
+}
+.clearBtn:hover {
+  border: 1px solid var(--green-hover);
+}
+
+.closeIcon {
+  stroke-width: 1.5px;
+  stroke: #000;
+  width: 12px;
+  height: 12px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.radio {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative; /* точка відліку для ::before */
+
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: 1px solid var(--text);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  transition: border-color 0.2s ease;
+}
+
+.radio::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.radio:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radio:focus-visible {
+  outline: 1px solid var(--text);
+  outline-offset: 2px;
+}

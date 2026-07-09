@@ -1,0 +1,80 @@
+.carouselWrapper {
+  border-radius: 17px;
+  overflow: hidden;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media only screen and (min-width: 1440px) {
+    width: 638px;
+  }
+}
+
+.carousel {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  width: 100%;
+  border-radius: 17px;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  max-width: 638px;
+  aspect-ratio: 638 / 505;
+  border-radius: 17px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.dots {
+  --blossom-dots-gap: 12px;
+  justify-content: flex-start;
+  margin-top: 16px;
+  display: flex;
+
+  @media only screen and (min-width: 768px) {
+    --blossom-dots-gap: 20px;
+    margin-top: 20px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    --blossom-dots-gap: 32px;
+    margin-top: 27px;
+  }
+}
+
+.dots :global(.blossom-dot) {
+  inline-size: auto;
+  block-size: auto;
+  border-radius: 16px;
+  background: none;
+  opacity: 1;
+  transition: none;
+}
+
+.thumb {
+  cursor: pointer;
+  border-radius: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+
+  width: clamp(64px, calc((100vw - 3 * 12px) / 4), 136px);
+  aspect-ratio: 136 / 144;
+
+  @media only screen and (min-width: 1440px) {
+    border-radius: 16px;
+    width: 136px;
+    height: 144px;
+    aspect-ratio: auto;
+  }
+}

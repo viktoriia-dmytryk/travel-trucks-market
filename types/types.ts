@@ -53,9 +53,9 @@ export interface Reviews {
 }
 
 export interface CamperFilters {
-  forms: Forms[];
-  transmissions: Transmissions[];
-  engines: Engines[];
+  forms: string[];
+  transmissions: string[];
+  engines: string[];
 }
 
 export interface BookingRequestPayload {
