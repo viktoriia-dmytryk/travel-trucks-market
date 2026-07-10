@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import MainInfoBox from '@/components/MainInfoBox/MainInfoBox';
 import ModalLoading from '@/components/ModalLoading/ModalLoading';
 import GallerySwiper from '@/components/Gallery/GallerySwiper';
+import VehicleDetails from '@/components/VehicleDetails/VehicleDetails';
 
 function CamperPage() {
   const params = useParams();
@@ -25,10 +26,17 @@ function CamperPage() {
   }
   return (
     <main className={css.mainBox}>
-      <div className={css.wrapper}>
+      <section className={css.wrapper}>
         <GallerySwiper images={data.gallery} />
-        <MainInfoBox camper={data} />
-      </div>
+        <div className={css.informationBox}>
+          <MainInfoBox camper={data} />
+          <VehicleDetails camper={data} />
+        </div>
+      </section>
+      <section className={css.review}>
+        <h2 className={css.reviewTitle}>Reviews</h2>
+        <div className={css.reviewBox}></div>
+      </section>
     </main>
   );
 }

@@ -16,7 +16,7 @@ function NotFoundCampers() {
         width={488}
         height={463}
         className={css.image}
-        sizes="(max-width: 1439px) 10vw, 488px"
+        sizes="(max-width: 1439px) 100vw, 488px"
       />
 
       <h2 className={css.title}>No campers found</h2>

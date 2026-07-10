@@ -68,7 +68,7 @@ function CampersList() {
   }
 
   return (
-    <div className={css.wrapper}>
+    <main className={css.wrapper}>
       {isFetching && <ModalLoading />}
       <ul className={css.listCampers}>
         {campers.map(camp => (
@@ -145,7 +145,7 @@ function CampersList() {
       )}
 
       {isFetchingNextPage && <ModalLoading />}
-    </div>
+    </main>
   );
 }
 

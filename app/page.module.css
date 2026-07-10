@@ -1,7 +1,14 @@
 .page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 120px;
+  padding-left: 16px;
+  padding-bottom: 20px;
   width: 100vi;
   height: 100vh;
-  max-height: 768px;
+  max-height: 100vh;
   background-image: image-set(
     url('/images/hero-image@1x.webp') 1x,
     url('/images/hero-image@2x.webp') 2x,
@@ -14,5 +21,42 @@
 
   @media only screen and (min-width: 1440px) {
     width: 1440px;
+    max-height: 768px;
+    padding-left: 64px;
+    padding-bottom: 178px;
   }
+}
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 100%;
+  color: var(--inputs);
+  margin-bottom: 16px;
+
+  @media only screen and (min-width: 1440px) {
+    font-size: 48px;
+    line-height: 67%;
+  }
+}
+.description {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--inputs);
+  margin-bottom: 40px;
+}
+
+.link {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  border-radius: 200px;
+  padding: 16px 49px;
+  background: var(--grey-green);
 }

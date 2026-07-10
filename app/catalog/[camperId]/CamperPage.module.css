@@ -1,17 +1,49 @@
 .mainBox {
-  padding: 136px 0 52px;
+  padding: 136px 16px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 
   @media only screen and (min-width: 1440px) {
     padding: 136px 64px 52px;
+    gap: 88px;
   }
 }
 .wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 24px;
   @media only screen and (min-width: 1440px) {
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+  }
+}
+.informationBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.reviewTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--main);
+}
+.reviewBox {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  @media only screen and (min-width: 1440px) {
+    flex-direction: row;
   }
 }
