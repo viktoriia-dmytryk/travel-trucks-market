@@ -5,6 +5,7 @@ import type {
   Transmissions,
   Engines,
   CamperFilters,
+  Reviews,
 } from '@/types/types';
 import axios from 'axios';
 
@@ -36,5 +37,10 @@ export const getCamperById = async (id: string) => {
 
 export const getCategories = async () => {
   const { data } = await api.get<CamperFilters>('/campers/filters');
+  return data;
+};
+
+export const getReviews = async (id: string) => {
+  const { data } = await api.get<Reviews[]>(`/campers/${id}/reviews`);
   return data;
 };

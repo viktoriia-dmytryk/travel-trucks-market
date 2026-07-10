@@ -8,6 +8,7 @@ import MainInfoBox from '@/components/MainInfoBox/MainInfoBox';
 import ModalLoading from '@/components/ModalLoading/ModalLoading';
 import GallerySwiper from '@/components/Gallery/GallerySwiper';
 import VehicleDetails from '@/components/VehicleDetails/VehicleDetails';
+import ReviewsList from '@/components/ReviewsList/ReviewsList';
 
 function CamperPage() {
   const params = useParams();
@@ -35,7 +36,9 @@ function CamperPage() {
       </section>
       <section className={css.review}>
         <h2 className={css.reviewTitle}>Reviews</h2>
-        <div className={css.reviewBox}></div>
+        <div className={css.reviewBox}>
+          <ReviewsList />
+        </div>
       </section>
     </main>
   );
