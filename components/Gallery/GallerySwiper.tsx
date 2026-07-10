@@ -33,11 +33,12 @@ export default function GallerySwiper({ images }: Props) {
 
       <div className={css.dots}>
         <BlossomDots for="gallery">
-          {({ index }) => (
-            <div className={css.thumb}>
+          {({ index, active }) => (
+            <div className={css.thumb} data-active={active}>
               <Image
                 src={images[index].thumb}
                 alt={`Thumbnail ${index + 1}`}
+                draggable={false}
                 fill
                 className={css.image}
               />

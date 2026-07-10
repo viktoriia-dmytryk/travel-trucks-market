@@ -30,8 +30,11 @@
 
 .image {
   object-fit: cover;
+  transition: transform 300ms cubic-bezier(0.31, 0.63, 0.78, 0.91);
 }
-
+.image:hover {
+  transform: scale(1.1);
+}
 .dots {
   --blossom-dots-gap: 12px;
   justify-content: center;
@@ -74,4 +77,7 @@
     height: 144px;
     aspect-ratio: auto;
   }
+}
+.thumb[data-active='true'] {
+  outline: 3px solid var(--grey-green);
 }

@@ -38,7 +38,7 @@ function VehicleDetails({ camper }: { camper: Camper }) {
         </li>
         <li className={css.infoItem}>
           Consumption
-          <span>{camper.consumption}</span>
+          <span>{parseFloat(camper.consumption)} l / 100km</span>
         </li>
       </ul>
     </div>

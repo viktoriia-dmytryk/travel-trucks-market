@@ -1,0 +1,118 @@
+.box {
+  margin: 0 auto;
+  max-width: 95%;
+  border: 1px solid var(--gray-light);
+  border-radius: 16px;
+  padding: 44px 20px;
+  @media only screen and (min-width: 1440px) {
+    margin: 0;
+    width: 641px;
+    padding: 44px 57px;
+  }
+}
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+  margin-bottom: 24px;
+}
+.label {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--gray);
+}
+.input {
+  border-radius: 12px;
+  padding: 18px;
+  width: 100%;
+  background: var(--inputs);
+  border: none;
+  outline: none;
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+}
+
+.input:hover,
+.input:focus-visible {
+  outline: 1px solid var(--gray-light);
+}
+.submitBtn {
+  margin-top: 24px;
+  border-radius: 200px;
+  padding: 16px;
+  width: 100%;
+  background: var(--grey-green);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: background 300ms cubic-bezier(0.31, 0.63, 0.78, 0.91);
+}
+
+.submitBtn:hover {
+  background: var(--green-hover);
+}
+.nameBox {
+  margin-bottom: 14px;
+}
+.nameBox,
+.emailBox {
+  position: relative;
+  width: 100%;
+}
+
+.iconError {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+}
+.errorText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--button);
+}
+.nameBox[data-error='true'] .input,
+.emailBox[data-error='true'] .input {
+  background: #ffdfdf;
+  border: 1px solid var(--button);
+}
+
+.nameBox[data-error='true'] .label,
+.emailBox[data-error='true'] .label {
+  top: -12px;
+  border-radius: 8px;
+  padding: 0px 8px;
+  background: #ffdfdf;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: #ec383b;
+}
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
+  top: -12px;
+  left: 18px;
+  padding: 0 8px;
+  background: var(--white);
+  border-radius: 8px;
+  font-size: 12px;
+}

@@ -6,6 +6,8 @@ import type {
   Engines,
   CamperFilters,
   Reviews,
+  BookingRequestPayload,
+  BookingRequestResponse,
 } from '@/types/types';
 import axios from 'axios';
 
@@ -42,5 +44,13 @@ export const getCategories = async () => {
 
 export const getReviews = async (id: string) => {
   const { data } = await api.get<Reviews[]>(`/campers/${id}/reviews`);
+  return data;
+};
+
+export const makeBooking = async (
+  id: string,
+  user: BookingRequestPayload
+): Promise<BookingRequestResponse> => {
+  const { data } = await api.post(`/campers/${id}/booking-requests`, user);
   return data;
 };

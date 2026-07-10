@@ -5,6 +5,7 @@ import './globals.css';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
 import Header from '@/components/Header/Header';
 import '@blossom-carousel/react/style.css';
+import { Toaster } from 'react-hot-toast';
 
 const geistInter = Inter({
   variable: '--font-inter',
@@ -51,7 +52,10 @@ export default function RootLayout({
       <body>
         <TanStackProvider>
           <Header />
-          <div className="container">{children}</div>
+          <div className="container">
+            <Toaster position="top-center" />
+            {children}
+          </div>
         </TanStackProvider>
       </body>
     </html>

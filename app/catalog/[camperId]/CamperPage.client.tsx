@@ -9,6 +9,7 @@ import ModalLoading from '@/components/ModalLoading/ModalLoading';
 import GallerySwiper from '@/components/Gallery/GallerySwiper';
 import VehicleDetails from '@/components/VehicleDetails/VehicleDetails';
 import ReviewsList from '@/components/ReviewsList/ReviewsList';
+import OrderForm from '@/components/OrderForm/OrderForm';
 
 function CamperPage() {
   const params = useParams();
@@ -38,6 +39,7 @@ function CamperPage() {
         <h2 className={css.reviewTitle}>Reviews</h2>
         <div className={css.reviewBox}>
           <ReviewsList />
+          <OrderForm id={data.id} />
         </div>
       </section>
     </main>

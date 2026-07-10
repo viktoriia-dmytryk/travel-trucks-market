@@ -1,7 +1,14 @@
 .reviewsList {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
+
+  @media only screen and (min-width: 1440px) {
+    margin: 0;
+    align-items: flex-start;
+  }
 }
 
 .item {
@@ -13,10 +20,10 @@
   border-radius: 16px;
   padding: 16px;
   background: var(--inputs);
-  max-width: 100%;
-
+  width: 95%;
+  max-width: 623px;
   @media only screen and (min-width: 1440px) {
-    max-width: 623px;
+    width: 623px;
   }
 }
 .wrapper {
