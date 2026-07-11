@@ -31,6 +31,12 @@
   left: 20px;
   width: 20px;
   height: 20px;
+  fill: var(--gray);
+  transition: fill 300ms cubic-bezier(0.31, 0.63, 0.78, 0.91);
+}
+
+.input:not(:placeholder-shown) ~ .iconMap {
+  fill: var(--main);
 }
 .input {
   font-weight: 400;
@@ -40,7 +46,10 @@
   background: var(--white);
   border: none;
 }
-
+.input:hover,
+.input:focus-visible {
+  outline: 1px solid var(--gray-light);
+}
 .filtersTitle {
   font-weight: 600;
   font-size: 20px;

@@ -4,9 +4,11 @@ import Image from 'next/image';
 import css from './NotFoundCampers.module.css';
 import Icon from '../Icon/Icon';
 import { useRouter } from 'next/navigation';
+import { useFilterStore } from '@/lib/store';
 
 function NotFoundCampers() {
   const router = useRouter();
+  const clearFilters = useFilterStore(state => state.clearFilters);
 
   return (
     <div className={css.wrapper}>
@@ -26,21 +28,13 @@ function NotFoundCampers() {
       </p>
 
       <div className={css.btnWrapper}>
-        <button
-          className={css.clearBtn}
-          type="button"
-          onClick={() => {
-            router.push('/catalog');
-          }}
-        >
+        <button className={css.clearBtn} type="button" onClick={clearFilters}>
           <Icon id="icon-close" className={css.closeIcon} /> Clear filters
         </button>
         <button
           className={css.viewAllBtn}
           type="button"
-          onClick={() => {
-            router.push('/catalog');
-          }}
+          onClick={() => router.push('/catalog')}
         >
           View all campers
         </button>

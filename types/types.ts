@@ -66,3 +66,10 @@ export interface BookingRequestPayload {
 export interface BookingRequestResponse {
   message: string;
 }
+
+export interface Filters {
+  location: string;
+  form: Forms | '';
+  engine: Engines | '';
+  transmission: Transmissions | '';
+}

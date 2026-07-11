@@ -1,15 +1,16 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useQuery } from '@tanstack/react-query';
 import css from './Filter.module.css';
 import Icon from '../Icon/Icon';
-import { useQuery } from '@tanstack/react-query';
 import { getCategories } from '@/lib/api';
 import { formatLabel } from '@/lib/utils';
+import type { Forms, Engines, Transmissions, Filters } from '@/types/types';
+import { useFilterStore } from '@/lib/store';
 
 function Filter() {
-  const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -19,20 +20,52 @@ function Filter() {
     queryFn: () => getCategories(),
   });
 
-  const location = searchParams.get('location') ?? '';
-  const form = searchParams.get('form') ?? '';
-  const engine = searchParams.get('engine') ?? '';
-  const transmission = searchParams.get('transmission') ?? '';
+  const {
+    location,
+    form,
+    engine,
+    transmission,
+    resetKey,
+    setFilters,
+    clearFilters,
+  } = useFilterStore();
+
+  const isUrlFilterSyncedRef = useRef(false);
+
+  useEffect(() => {
+    if (isUrlFilterSyncedRef.current) return;
+    isUrlFilterSyncedRef.current = true;
+
+    setFilters({
+      location: searchParams.get('location') ?? '',
+      form: (searchParams.get('form') as Forms) ?? '',
+      engine: (searchParams.get('engine') as Engines) ?? '',
+      transmission: (searchParams.get('transmission') as Transmissions) ?? '',
+    });
+  }, [searchParams, setFilters]);
+
+  useEffect(() => {
+    return () => {
+      clearFilters();
+    };
+  }, [clearFilters]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
 
+    const values: Filters = {
+      location: ((formData.get('location') as string) ?? '').trim(),
+      form: (formData.get('form') as Forms) ?? '',
+      engine: (formData.get('engine') as Engines) ?? '',
+      transmission: (formData.get('transmission') as Transmissions) ?? '',
+    };
+
+    setFilters(values);
+
     const params = new URLSearchParams(
-      [...formData.entries()]
-        .filter(([, value]) => value.toString().trim())
-        .map(([key, value]) => [key, value.toString()])
+      Object.entries(values).filter(([, value]) => value)
     );
 
     router.push(
@@ -42,24 +75,17 @@ function Filter() {
   };
 
   const handleClear = () => {
-    formRef.current?.reset();
+    clearFilters();
     router.push(pathname, { scroll: false });
   };
 
   return (
     <aside className={css.sidebar}>
-      <form
-        ref={formRef}
-        className={css.form}
-        key={searchParams.toString()}
-        onSubmit={handleSubmit}
-      >
+      <form className={css.form} key={resetKey} onSubmit={handleSubmit}>
         <div className={css.locationBlock}>
           <label htmlFor="location" className={css.label}>
             Location
           </label>
-
-          <Icon id="icon-map" className={css.iconMap} />
 
           <input
             id="location"
@@ -68,6 +94,8 @@ function Filter() {
             placeholder="City"
             defaultValue={location}
           />
+
+          <Icon id="icon-map" className={css.iconMap} />
         </div>
 
         <h3 className={css.filtersTitle}>Filters</h3>
