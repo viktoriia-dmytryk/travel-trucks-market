@@ -78,6 +78,7 @@ function OrderForm({ id }: { id: string }) {
             className={css.input}
             type="text"
             name="name"
+            autoComplete="name"
             id="name"
             maxLength={50}
             value={values.name}
@@ -101,8 +102,9 @@ function OrderForm({ id }: { id: string }) {
         <div className={css.emailBox} data-error={Boolean(errors.email)}>
           <input
             className={css.input}
-            type="text"
+            type="email"
             name="email"
+            autoComplete="email"
             id="email"
             maxLength={254}
             value={values.email}

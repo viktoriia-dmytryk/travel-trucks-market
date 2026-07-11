@@ -22,8 +22,10 @@ export default function GallerySwiper({ images }: Props) {
               <Image
                 src={image.original}
                 alt={`Photo ${index + 1}`}
-                draggable={false}
                 fill
+                priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                sizes="(max-width: 1439px) 100vw, 638px"
                 className={css.image}
               />
             </div>
@@ -38,9 +40,10 @@ export default function GallerySwiper({ images }: Props) {
               <Image
                 src={images[index].thumb}
                 alt={`Thumbnail ${index + 1}`}
-                draggable={false}
                 fill
+                draggable={false}
                 className={css.image}
+                sizes="(max-width: 1439px) 25vw, 136px"
               />
             </div>
           )}

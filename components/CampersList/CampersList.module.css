@@ -22,6 +22,7 @@
 .coverImage {
   object-fit: cover;
   width: 100%;
+  height: auto;
   border-radius: 16px;
   aspect-ratio: 219 / 240;
 

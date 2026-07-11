@@ -93,6 +93,7 @@ function Filter() {
             className={css.input}
             placeholder="City"
             defaultValue={location}
+            autoComplete="off"
           />
 
           <Icon id="icon-map" className={css.iconMap} />

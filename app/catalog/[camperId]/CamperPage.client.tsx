@@ -6,7 +6,7 @@ import { useParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import MainInfoBox from '@/components/MainInfoBox/MainInfoBox';
 import ModalLoading from '@/components/ModalLoading/ModalLoading';
-import GallerySwiper from '@/components/Gallery/GallerySwiper';
+import GallerySwiper from '@/components/GallerySwiper/GallerySwiper';
 import VehicleDetails from '@/components/VehicleDetails/VehicleDetails';
 import ReviewsList from '@/components/ReviewsList/ReviewsList';
 import OrderForm from '@/components/OrderForm/OrderForm';

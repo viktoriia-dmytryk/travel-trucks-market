@@ -79,6 +79,7 @@ function CampersList() {
               className={css.coverImage}
               width={219}
               height={240}
+              sizes="(max-width: 1439px) 100vw, 219px"
             />
 
             <div className={css.infoWrapper}>

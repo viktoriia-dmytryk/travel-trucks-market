@@ -7,7 +7,7 @@ export default function ModalLoading() {
     <div className={css.backdrop} role="dialog" aria-modal="true">
       <div className={css.modal}>
         <Loader />
-        <p>Loading tracks...</p>
+        <p>Loading trucks...</p>
         <p>Please wait while we fetch the best travel trucks for you</p>
       </div>
     </div>
