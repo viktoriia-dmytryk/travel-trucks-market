@@ -33,6 +33,7 @@ function page() {
   return (
     <main className={css.mainBox}>
       <Suspense fallback={<ModalLoading />}>
+        <h1 className="visually-hidden">Catalog</h1>
         <Filter />
         <CampersList />
       </Suspense>

@@ -97,7 +97,7 @@ function Filter() {
           <Icon id="icon-map" className={css.iconMap} />
         </div>
 
-        <h3 className={css.filtersTitle}>Filters</h3>
+        <h2 className={css.filtersTitle}>Filters</h2>
 
         <div className={css.fieldsetWrapper}>
           <fieldset className={css.fieldset}>

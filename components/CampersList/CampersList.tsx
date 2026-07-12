@@ -83,9 +83,9 @@ function CampersList() {
 
             <div className={css.infoWrapper}>
               <div className={css.titleInfoBox}>
-                <h2 className={css.name}>
+                <h3 className={css.name}>
                   {camp.name} <span className={css.price}>€{camp.price}</span>
-                </h2>
+                </h3>
 
                 <div className={css.infoBox}>
                   <p className={css.location}>

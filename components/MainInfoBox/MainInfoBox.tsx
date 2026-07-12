@@ -6,7 +6,7 @@ function MainInfoBox({ camper }: { camper: Camper }) {
   return (
     <div className={css.titleInfoBox}>
       <div className={css.titleBox}>
-        <h2 className={css.name}>{camper.name}</h2>
+        <h1 className={css.name}>{camper.name}</h1>
 
         <div className={css.infoBox}>
           <p className={css.location}>

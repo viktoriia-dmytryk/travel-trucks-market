@@ -36,7 +36,7 @@ export default function GallerySwiper({ images }: Props) {
       <div className={css.dots}>
         <BlossomDots for="gallery">
           {({ index, active }) => (
-            <div className={css.thumb} data-active={active}>
+            <span className={css.thumb} data-active={active}>
               <Image
                 src={images[index].thumb}
                 alt={`Thumbnail ${index + 1}`}
@@ -46,7 +46,7 @@ export default function GallerySwiper({ images }: Props) {
                 className={css.image}
                 sizes="(max-width: 1439px) 25vw, 136px"
               />
-            </div>
+            </span>
           )}
         </BlossomDots>
       </div>
