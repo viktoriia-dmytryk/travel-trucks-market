@@ -9,13 +9,14 @@ import { getCategories } from '@/lib/api';
 import { formatLabel } from '@/lib/utils';
 import type { Forms, Engines, Transmissions, Filters } from '@/types/types';
 import { useFilterStore } from '@/lib/store';
+import Loader from '../Loader/Loader';
 
 function Filter() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['category'],
     queryFn: () => getCategories(),
   });
@@ -73,6 +74,8 @@ function Filter() {
     clearFilters();
     router.push(pathname, { scroll: false });
   };
+
+  if (isLoading) return <Loader />;
 
   return (
     <aside className={css.sidebar}>

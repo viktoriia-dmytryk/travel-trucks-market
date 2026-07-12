@@ -10,7 +10,7 @@ function Header() {
   return (
     <header className={css.headerBox}>
       <nav className={css.navigation}>
-        <Link href={'/'}>
+        <Link href={'/'} aria-label="Logo">
           <Icon id="icon-TravelTrucks" className={css.logo} />
         </Link>
         <div className={css.wrapper}>

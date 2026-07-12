@@ -16,6 +16,7 @@ export const generateMetadata = async ({
 
   try {
     const camper = await getCamperById(camperId);
+    const imageSet = camper.gallery[0].original;
 
     return {
       title: `${camper.name} | TravelTrucks`,
@@ -27,7 +28,7 @@ export const generateMetadata = async ({
         siteName: 'TravelTrucks',
         images: [
           {
-            url: camper.coverImage,
+            url: imageSet,
             width: 1200,
             height: 630,
             alt: camper.name,

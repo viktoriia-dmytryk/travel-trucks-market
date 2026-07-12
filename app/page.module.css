@@ -9,6 +9,7 @@
   width: 100vi;
   height: 100vh;
   max-height: 100vh;
+  background-color: rgb(0, 0, 0, 0.2);
   background-image: image-set(
     url('/images/hero-image@1x.webp') 1x,
     url('/images/hero-image@2x.webp') 2x,
