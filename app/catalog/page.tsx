@@ -5,6 +5,8 @@ import Filter from '@/components/Filter/Filter';
 import ModalLoading from '@/components/ModalLoading/ModalLoading';
 import { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'TravelTrucks | Catalog',
   icons: '/favicon.ico',

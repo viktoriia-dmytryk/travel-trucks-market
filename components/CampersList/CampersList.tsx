@@ -23,8 +23,6 @@ function CampersList() {
   const transmission =
     (searchParams.get('transmission') as Transmissions) ?? '';
 
-  const filters = { location, form, engine, transmission };
-
   const {
     data,
     fetchNextPage,
@@ -34,7 +32,7 @@ function CampersList() {
     isLoading,
     isError,
   } = useInfiniteQuery({
-    queryKey: ['campers', filters],
+    queryKey: ['campers', location, form, engine, transmission],
     queryFn: ({ pageParam }) =>
       getCampersCatalog({
         page: pageParam,
