@@ -18,6 +18,7 @@ const geistManrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: process.env.NEXT_PUBLIC_API_URL,
   title: 'TravelTrucks',
   icons: '/favicon.ico',
   description:

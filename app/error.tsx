@@ -4,7 +4,7 @@ interface ErrorProps {
   error: Error;
 }
 
-function NoteIdError({ error }: ErrorProps) {
+function Error({ error }: ErrorProps) {
   return (
     <p
       style={{
@@ -23,4 +23,4 @@ function NoteIdError({ error }: ErrorProps) {
   );
 }
 
-export default NoteIdError;
+export default Error;

@@ -71,7 +71,7 @@ function CampersList() {
     <main className={css.wrapper}>
       {isFetching && <ModalLoading />}
       <ul className={css.listCampers}>
-        {campers.map(camp => (
+        {campers.map((camp, index) => (
           <li className={css.listItem} key={camp.id}>
             <Image
               src={camp.coverImage}
@@ -79,6 +79,7 @@ function CampersList() {
               className={css.coverImage}
               width={219}
               height={240}
+              priority={index === 0}
               sizes="(max-width: 1439px) 100vw, 219px"
             />
 

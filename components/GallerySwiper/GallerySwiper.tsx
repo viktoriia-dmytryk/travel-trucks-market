@@ -24,7 +24,7 @@ export default function GallerySwiper({ images }: Props) {
                 alt={`Photo ${index + 1}`}
                 fill
                 priority={index === 0}
-                loading={index === 0 ? 'eager' : 'lazy'}
+                draggable={false}
                 sizes="(max-width: 1439px) 100vw, 638px"
                 className={css.image}
               />

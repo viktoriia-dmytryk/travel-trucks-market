@@ -1,4 +1,3 @@
-// components/ModalLoading/ModalLoading.tsx
 import css from './ModalLoading.module.css';
 import Loader from '../Loader/Loader';
 

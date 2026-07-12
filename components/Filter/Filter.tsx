@@ -27,6 +27,7 @@ function Filter() {
     transmission,
     resetKey,
     setFilters,
+    syncFromUrl,
     clearFilters,
   } = useFilterStore();
 
@@ -36,13 +37,13 @@ function Filter() {
     if (isUrlFilterSyncedRef.current) return;
     isUrlFilterSyncedRef.current = true;
 
-    setFilters({
+    syncFromUrl({
       location: searchParams.get('location') ?? '',
       form: (searchParams.get('form') as Forms) ?? '',
       engine: (searchParams.get('engine') as Engines) ?? '',
       transmission: (searchParams.get('transmission') as Transmissions) ?? '',
     });
-  }, [searchParams, setFilters]);
+  }, [searchParams, syncFromUrl]);
 
   useEffect(() => {
     return () => {

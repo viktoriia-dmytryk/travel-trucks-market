@@ -11,7 +11,6 @@ function Header() {
     <header className={css.headerBox}>
       <nav className={css.navigation}>
         <Link href={'/'}>
-          {' '}
           <Icon id="icon-TravelTrucks" className={css.logo} />
         </Link>
         <div className={css.wrapper}>

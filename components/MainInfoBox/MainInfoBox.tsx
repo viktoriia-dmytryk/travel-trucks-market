@@ -23,7 +23,7 @@ function MainInfoBox({ camper }: { camper: Camper }) {
 
       <p className={css.price}>€{camper.price}</p>
 
-      <p className={css.description}> {camper.description}</p>
+      <p className={css.description}>{camper.description}</p>
     </div>
   );
 }

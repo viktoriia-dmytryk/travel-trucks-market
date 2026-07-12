@@ -8,6 +8,7 @@ interface FilterState {
   transmission: Transmissions | '';
   resetKey: number;
   setFilters: (filters: Filters) => void;
+  syncFromUrl: (filters: Filters) => void;
   clearFilters: () => void;
 }
 
@@ -18,6 +19,11 @@ export const useFilterStore = create<FilterState>(set => ({
   transmission: '',
   resetKey: 0,
   setFilters: filters => set(filters),
+  syncFromUrl: filters =>
+    set(state => ({
+      ...filters,
+      resetKey: state.resetKey + 1,
+    })),
   clearFilters: () =>
     set(state => ({
       location: '',
