@@ -23,7 +23,7 @@ export default function GallerySwiper({ images }: Props) {
                 src={image.original}
                 alt={`Photo ${index + 1}`}
                 fill
-                priority={index === 0}
+                loading="eager"
                 draggable={false}
                 sizes="(max-width: 1439px) 100vw, 638px"
                 className={css.image}
@@ -40,10 +40,10 @@ export default function GallerySwiper({ images }: Props) {
               <Image
                 src={images[index].thumb}
                 alt={`Thumbnail ${index + 1}`}
-                priority={index === 0}
+                loading="lazy"
                 fill
                 draggable={false}
-                className={css.image}
+                className={css.imageDots}
                 sizes="(max-width: 1439px) 25vw, 136px"
               />
             </span>

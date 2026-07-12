@@ -9,6 +9,6 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 120px 64px 52px;
+    padding: 120px 64px 52px 63px;
   }
 }
