@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import css from './Filter.module.css';
@@ -31,25 +31,19 @@ function Filter() {
     clearFilters,
   } = useFilterStore();
 
-  const isUrlFilterSyncedRef = useRef(false);
-
   useEffect(() => {
-    if (isUrlFilterSyncedRef.current) return;
-    isUrlFilterSyncedRef.current = true;
-
     syncFromUrl({
       location: searchParams.get('location') ?? '',
       form: (searchParams.get('form') as Forms) ?? '',
       engine: (searchParams.get('engine') as Engines) ?? '',
       transmission: (searchParams.get('transmission') as Transmissions) ?? '',
     });
-  }, [searchParams, syncFromUrl]);
 
-  useEffect(() => {
     return () => {
       clearFilters();
     };
-  }, [clearFilters]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

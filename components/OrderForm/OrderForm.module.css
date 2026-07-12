@@ -46,9 +46,14 @@
   color: var(--main);
 }
 
-.input:hover,
-.input:focus-visible {
+.input:hover {
   outline: 1px solid var(--gray-light);
+  outline-offset: 0;
+}
+
+.input:focus-visible {
+  outline: none;
+  outline-offset: 0;
 }
 .submitBtn {
   margin-top: 24px;

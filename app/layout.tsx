@@ -15,6 +15,7 @@ const geistInter = Inter({
 const geistManrope = Manrope({
   variable: '--font-manrope',
   subsets: ['latin'],
+  preload: false,
 });
 
 export const metadata: Metadata = {

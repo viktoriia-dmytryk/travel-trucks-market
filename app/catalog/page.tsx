@@ -1,11 +1,11 @@
+export const dynamic = 'force-dynamic';
+
 import { Suspense } from 'react';
 import CampersList from '@/components/CampersList/CampersList';
 import css from './page.module.css';
 import Filter from '@/components/Filter/Filter';
 import ModalLoading from '@/components/ModalLoading/ModalLoading';
 import { Metadata } from 'next';
-
-export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'TravelTrucks | Catalog',

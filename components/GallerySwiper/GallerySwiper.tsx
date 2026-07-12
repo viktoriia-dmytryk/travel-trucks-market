@@ -40,6 +40,7 @@ export default function GallerySwiper({ images }: Props) {
               <Image
                 src={images[index].thumb}
                 alt={`Thumbnail ${index + 1}`}
+                priority={index === 0}
                 fill
                 draggable={false}
                 className={css.image}

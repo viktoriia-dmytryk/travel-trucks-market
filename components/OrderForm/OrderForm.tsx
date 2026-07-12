@@ -72,7 +72,7 @@ function OrderForm({ id }: { id: string }) {
         Stay connected! We are always ready to help you.
       </p>
 
-      <form className={css.form} action={handleSubmit}>
+      <form className={css.form} action={handleSubmit} noValidate>
         <div className={css.nameBox} data-error={Boolean(errors.name)}>
           <input
             className={css.input}
